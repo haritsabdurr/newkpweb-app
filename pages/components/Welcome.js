@@ -41,6 +41,23 @@ const Home = () => {
         </div>
         <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
           <h2 className='mt-3 text-md md:text-lg font-bold'>
+            Briefing ke-6 Penyusunan Laporan Kemajuan
+          </h2>
+
+          <p className='mt-3 text-sm text-gray-500'>
+            Bagi mahasiswa yang mengikuti Magang & Studi Independen Semester
+            Genap 2021/2022 diselenggarakan via Ms. Teams pada tanggal 12 Maret
+            2022 | 11.00 - 11.30 WIB
+          </p>
+
+          <p className='relative inline-block mt-16 text-md font-bold text-purple-600'>
+            <span className='relative cursor-pointer hover:text-slate-900'>
+              Find out more →
+            </span>
+          </p>
+        </div>
+        <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
+          <h2 className='mt-3 text-md md:text-lg font-bold'>
             Briefing Penyusunan Laporan Kemajuan
           </h2>
 

@@ -1,15 +1,20 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer className='bg-purple-600'>
       <div className='px-4 py-16 mx-auto sm:px-4 lg:px-8'>
         <div className='flex justify-center text-teal-300'>
-          <img
-            className='h-16 md:h-20'
-            src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
-            alt='logo ibik'
-          />
+          <Link href='http://fti.untar.ac.id/' target='_blank'>
+            <div>
+              <img
+                className='h-16 md:h-20 cursor-pointer'
+                src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
+                alt='logo ibik'
+              />
+            </div>
+          </Link>
         </div>
 
         <p className='mt-8 text-center text-white text-sm md:text-2xl font-bold'>
