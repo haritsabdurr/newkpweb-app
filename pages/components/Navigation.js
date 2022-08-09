@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Navigation = () => {
-  const [menu, setMenu] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className='bg-white'>
@@ -18,7 +18,7 @@ const Navigation = () => {
             </a>
           </div>
 
-          <div className='hidden md:block'>
+          <div className='hidden md:block' id='desktop-menu'>
             <nav aria-labelledby='header-navigation'>
               <h2 className='sr-only' id='header-menu'>
                 Header navigation
@@ -60,7 +60,10 @@ const Navigation = () => {
             </div>
 
             <div className='block md:hidden'>
-              <button className='p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75'>
+              <button
+                className='p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75'
+                onClick={() => setOpen(!open)}
+              >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   className='w-5 h-5'
@@ -80,7 +83,12 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-      <div className='hidden' id='mobile-menu'>
+      <div
+        className={`${
+          open ? 'block' : 'hidden'
+        } md:hidden z-40 absolute bg-white w-full rounded-sm`}
+        id='mobile-menu'
+      >
         <div className='px-2 pt-2 pb-3 space-y-1'>
           <a
             href='#'
