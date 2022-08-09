@@ -5,7 +5,7 @@ const Navigation = () => {
 
   return (
     <header className='bg-white'>
-      <div className='max-w-screen-2xl px-4 pt-3 mx-auto sm:px-6 lg:px-8'>
+      <div className='max-w-screen-2xl px-4 pt-3 pb-2 mx-auto sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='md:flex md:items-center md:gap-12'>
             <a className='block text-teal-600'>
