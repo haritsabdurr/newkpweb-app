@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navigation = () => {
+  const [menu, setMenu] = useState(false);
+
   return (
-    <header className='bg-white' x-data='{ open: false }'>
+    <header className='bg-white'>
       <div className='max-w-screen-2xl px-4 pt-3 mx-auto sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='md:flex md:items-center md:gap-12'>
@@ -18,11 +20,11 @@ const Navigation = () => {
 
           <div className='hidden md:block'>
             <nav aria-labelledby='header-navigation'>
-              <h2 className='sr-only' id='header-navigation'>
+              <h2 className='sr-only' id='header-menu'>
                 Header navigation
               </h2>
 
-              <ul className='flex items-center gap-4 lg:gap-8 text-lg font-semibold'>
+              <ul className='flex items-center gap-4 lg:gap-8 text-sm lg:text-lg font-semibold'>
                 <li>
                   <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
                     Alur & File KP
@@ -57,7 +59,7 @@ const Navigation = () => {
               </a>
             </div>
 
-            <div className='block md:hidden' x-onClick='open = ! open'>
+            <div className='block md:hidden'>
               <button className='p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -78,7 +80,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-      <div className='hidden' id='mobile-menu' x-show='open'>
+      <div className='hidden' id='mobile-menu'>
         <div className='px-2 pt-2 pb-3 space-y-1'>
           <a
             href='#'

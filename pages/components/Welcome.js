@@ -3,21 +3,26 @@ import React from 'react';
 const Home = () => {
   return (
     <div className='max-w-screen-2xl px-2 py-6 my-24 mx-auto sm:px-6 lg:px-8'>
-      <div className='text-center '>
+      <div className='text-center pb-4 md:pb-16'>
         <h1 className='text-2xl md:text-5xl font-bold py-2 uppercase'>
           Selamat Datang<br></br> di Website KP FTI Untar
         </h1>
-        <h2 className='text-md md:text-xl mt-4'>
+        <h2 className='text-md md:text-xl mt-4 py-3'>
           Website ini digunakan oleh Mahasiswa FTI Untar untuk menginput
           informasi KP yang sedang dilakukan. Mahasiswa harus melakukan
           registrasi terlebih dahulu untuk dapat menggunakan website ini.
         </h2>
-        <h2 className='text-lg md:text-xl font-bold py-3 mt-8'>
-          Pengumuman KP
-        </h2>
+        <div className='sm:gap-4 flex justify-center items-center py-6'>
+          <a className='px-6 py-3 text-sm font-medium shadow-lg text-white uppercase bg-purple-600 hover:bg-purple-800 duration-200 rounded-md'>
+            Registrasi
+          </a>
+        </div>
       </div>
       <div>
-        <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md border border-slate-400 rounded-md mx-2 my-3'>
+        <h2 className='text-lg text-center md:text-xl font-bold py-3 mt-8'>
+          Pengumuman KP
+        </h2>
+        <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
           <h2 className='mt-3 text-md md:text-lg font-bold'>
             Briefing ke 7-Pengumpulan Laporan Kemajuan
           </h2>
@@ -34,7 +39,7 @@ const Home = () => {
             </span>
           </p>
         </div>
-        <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md border border-slate-400 rounded-md mx-2 my-3'>
+        <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
           <h2 className='mt-3 text-md md:text-lg font-bold'>
             Briefing Penyusunan Laporan Kemajuan
           </h2>
