@@ -16,11 +16,11 @@ const Footer = () => {
   }, [isDesktop]);
 
   return (
-    <footer className='bg-purple-600'>
+    <footer className='bg-purple-700'>
       <div className='px-4 py-16 mx-auto sm:px-4 lg:px-8'>
         <div className='flex justify-center text-teal-300'>
           <Link href='http://fti.untar.ac.id/' target='_blank'>
-            <div>
+            <div className='cursor-pointer'>
               <Image
                 src={Logo}
                 alt='logo ibik'

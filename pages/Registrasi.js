@@ -113,7 +113,7 @@ const Registrasi = () => {
               <button
                 type='submit'
                 onClick={berhasilSubmit}
-                className='inline-block px-8 py-3 ml-3 text-sm font-medium text-white bg-purple-600 rounded-md shadow-lg'
+                className='inline-block px-8 py-3 ml-3 text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 rounded-md shadow-lg'
               >
                 Register
               </button>
