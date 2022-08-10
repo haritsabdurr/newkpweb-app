@@ -1,10 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Home = () => {
   return (
     <>
       <div
-        className='text-center md:pb-16 text-white px-6 py-32 lg:px-[20rem] h-[36rem]'
+        className='text-center md:pb-16 text-white px-6 py-32 xl:px-[20rem] h-[36rem]'
         id='banner-hero'
       >
         <h1 className='text-2xl md:text-5xl font-bold py-2 uppercase'>
@@ -16,9 +17,11 @@ const Home = () => {
           registrasi terlebih dahulu untuk dapat menggunakan website ini.
         </h2>
         <div className='sm:gap-4 flex justify-center items-center my-8'>
-          <a className='px-6 py-3 text-md font-medium shadow-lg text-white uppercase bg-purple-600 hover:bg-purple-800 duration-200 rounded-md'>
-            Registrasi
-          </a>
+          <Link href='/Registrasi'>
+            <a className='px-6 py-3 text-md font-medium shadow-lg text-white uppercase bg-purple-600 hover:bg-purple-800 duration-200 rounded-md'>
+              Registrasi
+            </a>
+          </Link>
         </div>
       </div>
       <div className='max-w-screen-2xl px-2 py-6 my-2 mx-auto sm:px-6 lg:px-8'>

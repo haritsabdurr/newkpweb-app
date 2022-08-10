@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className='bg-white'>
-      <div className='max-w-screen-2xl px-4 pt-3 pb-2 mx-auto sm:px-6 lg:px-8'>
+    <header className='bg-white border-b-2 border-gray-300'>
+      <div className='max-w-screen-2xl px-4 pt-3 pb-3 mx-auto sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='md:flex md:items-center md:gap-12'>
-            <a className='block text-teal-600'>
-              <span className='sr-only'>Home</span>
-              <img
-                className='h-16 md:h-20 pt-2'
-                src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
-                alt='logo ibik'
-              />
-            </a>
+            <Link href='/'>
+              <a className='block text-purple-600'>
+                <span className='sr-only'>Home</span>
+                <img
+                  className='h-16 md:h-20 pt-2'
+                  src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
+                  alt='logo ibik'
+                />
+              </a>
+            </Link>
           </div>
 
           <div className='hidden md:block' id='desktop-menu'>
@@ -26,27 +29,35 @@ const Navigation = () => {
 
               <ul className='flex items-center gap-4 lg:gap-8 text-sm lg:text-lg font-semibold'>
                 <li>
-                  <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
-                    Alur & File KP
-                  </a>
+                  <Link href='/Alur'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                      Alur & File KP
+                    </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
-                    Tempat KP
-                  </a>
+                  <Link href='/Tempat'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                      Tempat KP
+                    </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
-                    Registrasi
-                  </a>
+                  <Link href='/Registrasi'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                      Registrasi
+                    </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
-                    Lowongan KP
-                  </a>
+                  <Link href='/Lowongan'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                      Lowongan KP
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -54,9 +65,11 @@ const Navigation = () => {
 
           <div className='flex items-center gap-4'>
             <div className='sm:gap-4 sm:flex'>
-              <a className='px-5 py-2.5 text-sm font-medium text-white bg-purple-600 hover:bg-purple-800 duration-200 rounded-md shadow'>
-                Login
-              </a>
+              <Link href='/Login'>
+                <a className='px-5 py-2.5 text-sm font-medium text-white bg-purple-600 hover:bg-purple-800 duration-200 rounded-md shadow'>
+                  Login
+                </a>
+              </Link>
             </div>
 
             <div className='block md:hidden'>
@@ -86,37 +99,33 @@ const Navigation = () => {
       <div
         className={`${
           open ? 'block' : 'hidden'
-        } md:hidden z-40 absolute bg-white w-full rounded-sm`}
+        } md:hidden z-40 absolute bg-white w-full rounded-sm border-b-2 border-gray-500 shadow-lg`}
         id='mobile-menu'
       >
         <div className='px-2 pt-2 pb-3 space-y-1'>
-          <a
-            href='#'
-            className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-          >
-            Alur & File KP
-          </a>
+          <Link href='/Alur'>
+            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+              Alur & File KP
+            </a>
+          </Link>
 
-          <a
-            href='#'
-            className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-          >
-            Tempat KP
-          </a>
+          <Link href='/Tempat'>
+            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+              Tempat KP
+            </a>
+          </Link>
 
-          <a
-            href='#'
-            className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-          >
-            Registrasi
-          </a>
+          <Link href='/Registrasi'>
+            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+              Registrasi
+            </a>
+          </Link>
 
-          <a
-            href='#'
-            className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-          >
-            Lowongan KP
-          </a>
+          <Link href='/Lowongan'>
+            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+              Lowongan KP
+            </a>
+          </Link>
         </div>
       </div>
     </header>
