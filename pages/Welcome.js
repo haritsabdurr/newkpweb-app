@@ -63,7 +63,7 @@ const Home = () => {
               </span>
             </p>
           </div>
-          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-lg hover:shadow-3xl border border-slate-400 rounded-md mx-2 my-3'>
+          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
             <h2 className='mt-3 text-md md:text-lg font-bold'>
               Briefing Penyusunan Laporan Kemajuan
             </h2>
