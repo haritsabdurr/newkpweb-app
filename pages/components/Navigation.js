@@ -27,7 +27,7 @@ const Navigation = () => {
                   src={Logo}
                   alt='logo ibik'
                   width={isDesktop ? 165 : 125}
-                  height={isDesktop ? 80 : 65}
+                  height={isDesktop ? 75 : 65}
                   layout='intrinsic'
                 />
                 {/* <img
@@ -48,7 +48,7 @@ const Navigation = () => {
               <ul className='flex items-center gap-4 lg:gap-8 text-sm lg:text-lg font-semibold'>
                 <li>
                   <Link href='/Alur'>
-                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-700'>
                       Alur & File KP
                     </a>
                   </Link>
@@ -56,7 +56,7 @@ const Navigation = () => {
 
                 <li>
                   <Link href='/Tempat'>
-                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-700'>
                       Tempat KP
                     </a>
                   </Link>
@@ -64,7 +64,7 @@ const Navigation = () => {
 
                 <li>
                   <Link href='/Registrasi'>
-                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-700'>
                       Registrasi
                     </a>
                   </Link>
@@ -72,7 +72,7 @@ const Navigation = () => {
 
                 <li>
                   <Link href='/Lowongan'>
-                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-600'>
+                    <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-700'>
                       Lowongan KP
                     </a>
                   </Link>
@@ -84,7 +84,7 @@ const Navigation = () => {
           <div className='flex items-center gap-4'>
             <div className='sm:gap-4 sm:flex'>
               <Link href='/Login'>
-                <a className='px-5 py-2.5 text-sm font-medium text-white bg-purple-600 hover:bg-purple-800 duration-200 rounded-md shadow'>
+                <a className='px-5 py-2.5 text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 duration-200 rounded-md shadow'>
                   Login
                 </a>
               </Link>
@@ -122,25 +122,25 @@ const Navigation = () => {
       >
         <div className='px-2 pt-2 pb-3 space-y-1'>
           <Link href='/Alur'>
-            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+            <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
               Alur & File KP
             </a>
           </Link>
 
           <Link href='/Tempat'>
-            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+            <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
               Tempat KP
             </a>
           </Link>
 
           <Link href='/Registrasi'>
-            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+            <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
               Registrasi
             </a>
           </Link>
 
           <Link href='/Lowongan'>
-            <a className='text-slate-900 hover:bg-purple-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+            <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
               Lowongan KP
             </a>
           </Link>

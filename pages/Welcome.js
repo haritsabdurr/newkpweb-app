@@ -18,7 +18,7 @@ const Home = () => {
         </h2>
         <div className='sm:gap-4 flex justify-center items-center my-8'>
           <Link href='/Registrasi'>
-            <a className='px-6 py-3 text-md font-medium shadow-lg text-white uppercase bg-purple-600 hover:bg-purple-800 duration-200 rounded-md'>
+            <a className='px-6 py-3 text-md font-medium shadow-lg text-white uppercase bg-purple-700 hover:bg-purple-800 duration-200 rounded-md'>
               Registrasi
             </a>
           </Link>
@@ -40,7 +40,7 @@ const Home = () => {
               Februrari 2022 | 11.00 - 11.30 WIB
             </p>
 
-            <p className='relative inline-block mt-16 text-md font-bold text-purple-600'>
+            <p className='relative inline-block mt-16 text-md font-bold text-purple-700'>
               <span className='relative cursor-pointer hover:text-slate-900'>
                 Find out more →
               </span>
@@ -57,13 +57,13 @@ const Home = () => {
               Maret 2022 | 11.00 - 11.30 WIB
             </p>
 
-            <p className='relative inline-block mt-16 text-md font-bold text-purple-600'>
+            <p className='relative inline-block mt-16 text-md font-bold text-purple-700'>
               <span className='relative cursor-pointer hover:text-slate-900'>
                 Find out more →
               </span>
             </p>
           </div>
-          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
+          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-lg hover:shadow-3xl border border-slate-400 rounded-md mx-2 my-3'>
             <h2 className='mt-3 text-md md:text-lg font-bold'>
               Briefing Penyusunan Laporan Kemajuan
             </h2>
@@ -74,7 +74,7 @@ const Home = () => {
               Maret 2022 | 11.00 - 11.30 WIB
             </p>
 
-            <p className='relative inline-block mt-16 text-md font-bold text-purple-600'>
+            <p className='relative inline-block mt-16 text-md font-bold text-purple-700'>
               <span className='relative cursor-pointer hover:text-slate-900'>
                 Find out more →
               </span>
