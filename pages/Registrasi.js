@@ -31,14 +31,25 @@ const Registrasi = () => {
             </label>
 
             <div className='relative'>
-              <input type='radio' name='radio-1' value='Sistem Informasi' />
+              <input
+                type='radio'
+                name='radio-1'
+                value='Sistem Informasi'
+                className='cursor-pointer'
+                checked
+              />
               <label
                 htmlFor='radio-1'
                 className='ml-2 mr-2 text-sm font-normal text-gray-800'
               >
                 Sistem Informasi
               </label>
-              <input type='radio' name='radio-2' value='Teknik Informatika' />
+              <input
+                type='radio'
+                name='radio-1'
+                value='Teknik Informatika'
+                className='cursor-pointer'
+              />
               <label
                 htmlFor='radio-1'
                 className='ml-2 mr-2 text-sm font-normal text-gray-800'
