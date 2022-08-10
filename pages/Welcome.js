@@ -18,7 +18,7 @@ const Home = () => {
         </h2>
         <div className='sm:gap-4 flex justify-center items-center my-8'>
           <Link href='/Registrasi'>
-            <a className='px-6 py-3 text-md font-medium shadow-lg text-white uppercase bg-purple-700 hover:bg-purple-800 duration-200 rounded-md'>
+            <a className='px-6 py-3 text-md font-medium shadow-xl text-white uppercase bg-purple-700 hover:bg-purple-800 hover:outline duration-200 rounded-md'>
               Registrasi
             </a>
           </Link>
