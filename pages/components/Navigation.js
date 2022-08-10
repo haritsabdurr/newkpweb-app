@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../public/logo-fti.png';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
-  const [image, setImage] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 800px)');
+    const listener = () => setIsDesktop(media.matches);
+    listener();
+    window.addEventListener('resize', listener);
+
+    return () => window.removeEventListener('resize', listener);
+  }, [isDesktop]);
 
   return (
     <header className='bg-white border-b-2 border-gray-300'>
@@ -13,12 +22,19 @@ const Navigation = () => {
         <div className='flex items-center justify-between h-16'>
           <div className='md:flex md:items-center md:gap-12'>
             <Link href='/'>
-              <a className='block text-purple-600'>
-                <img
+              <a className='block text-purple-600 pt-3'>
+                <Image
+                  src={Logo}
+                  alt='logo ibik'
+                  width={isDesktop ? 165 : 125}
+                  height={isDesktop ? 80 : 65}
+                  layout='intrinsic'
+                />
+                {/* <img
                   className='h-16 md:h-20 pt-2'
                   src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
                   alt='logo ibik2'
-                />
+                /> */}
               </a>
             </Link>
           </div>

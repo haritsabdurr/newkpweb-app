@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '../../public/logo-fti.png';
 
 const Footer = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 800px)');
+    const listener = () => setIsDesktop(media.matches);
+    listener();
+    window.addEventListener('resize', listener);
+
+    return () => window.removeEventListener('resize', listener);
+  }, [isDesktop]);
+
   return (
     <footer className='bg-purple-600'>
       <div className='px-4 py-16 mx-auto sm:px-4 lg:px-8'>
         <div className='flex justify-center text-teal-300'>
           <Link href='http://fti.untar.ac.id/' target='_blank'>
             <div>
-              <img
-                className='h-16 md:h-20 cursor-pointer'
-                src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
+              <Image
+                src={Logo}
                 alt='logo ibik'
+                width={isDesktop ? 175 : 125}
+                height={isDesktop ? 85 : 65}
+                layout='intrinsic'
               />
             </div>
           </Link>
