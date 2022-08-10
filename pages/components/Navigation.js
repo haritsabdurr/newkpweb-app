@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className='flex items-center justify-between h-16'>
           <div className='md:flex md:items-center md:gap-12'>
             <Link href='/'>
-              <a className='block text-purple-600 pt-3'>
+              <a className='block text-purple-600 pt-2'>
                 <Image
                   src={Logo}
                   alt='logo ibik'
