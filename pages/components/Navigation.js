@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '../../public/logo-fti.png';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const [image, setImage] = useState(false);
 
   return (
     <header className='bg-white border-b-2 border-gray-300'>
@@ -11,11 +14,10 @@ const Navigation = () => {
           <div className='md:flex md:items-center md:gap-12'>
             <Link href='/'>
               <a className='block text-purple-600'>
-                <span className='sr-only'>Home</span>
                 <img
                   className='h-16 md:h-20 pt-2'
                   src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
-                  alt='logo ibik'
+                  alt='logo ibik2'
                 />
               </a>
             </Link>
