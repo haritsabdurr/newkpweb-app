@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Logo from '../../public/logo-fti.png';
 
 const Navigation = () => {
@@ -16,6 +17,28 @@ const Navigation = () => {
     return () => window.removeEventListener('resize', listener);
   }, [isDesktop]);
 
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.2,
+      },
+      display: 'block',
+    },
+    exit: {
+      opacity: 0,
+      rotateX: -19,
+      transition: {
+        duration: 0.2,
+        delay: 0.1,
+      },
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  };
+
   return (
     <header className='bg-white border-b-2 border-gray-300'>
       <div className='max-w-screen-2xl px-4 pt-3 pb-3 mx-auto sm:px-6 lg:px-8'>
@@ -27,14 +50,9 @@ const Navigation = () => {
                   src={Logo}
                   alt='logo ibik'
                   width={isDesktop ? 165 : 125}
-                  height={isDesktop ? 75 : 65}
+                  height={isDesktop ? 75 : 55}
                   layout='intrinsic'
                 />
-                {/* <img
-                  className='h-16 md:h-20 pt-2'
-                  src='http://snti.untar.ac.id/images/logo-fti-png_2.png'
-                  alt='logo ibik2'
-                /> */}
               </a>
             </Link>
           </div>
@@ -95,30 +113,50 @@ const Navigation = () => {
                 className='p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75'
                 onClick={() => setOpen(!open)}
               >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='w-5 h-5'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M4 6h16M4 12h16M4 18h16'
-                  />
-                </svg>
+                {open ? (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-5 h-5'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M6 18L18 6M6 6l12 12'
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='w-5 h-5'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M4 6h16M4 12h16M4 18h16'
+                    />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div
+      <motion.div
         className={`${
           open ? 'block' : 'hidden'
-        } md:hidden z-40 absolute bg-white w-full rounded-sm border-b-2 border-gray-500 shadow-lg`}
+        } md:hidden z-40 mt-0.5 absolute bg-white w-full rounded-sm border-gray-500 shadow-lg`}
         id='mobile-menu'
+        initial='exit'
+        animate={open ? 'enter' : 'exit'}
+        variants={subMenuAnimate}
       >
         <div className='px-2 pt-2 pb-3 space-y-1'>
           <Link href='/Alur'>
@@ -145,7 +183,7 @@ const Navigation = () => {
             </a>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 };
