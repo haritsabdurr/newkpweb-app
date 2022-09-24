@@ -50,7 +50,7 @@ const Navigation = () => {
                   src={Logo}
                   alt='logo ibik'
                   width={isDesktop ? 165 : 125}
-                  height={isDesktop ? 75 : 55}
+                  height={isDesktop ? 75 : 58}
                   layout='intrinsic'
                 />
               </a>
