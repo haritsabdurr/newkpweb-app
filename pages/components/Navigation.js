@@ -3,9 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Logo from '../../public/logo-fti.png';
+import Tooltip from '@mui/material/Tooltip';
+import Button from '@mui/material/Button';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -16,6 +19,8 @@ const Navigation = () => {
 
     return () => window.removeEventListener('resize', listener);
   }, [isDesktop]);
+
+  const namaMahasiswa = 'Kristopher';
 
   const subMenuAnimate = {
     enter: {
@@ -101,11 +106,50 @@ const Navigation = () => {
 
           <div className='flex items-center gap-4'>
             <div className='sm:gap-4 sm:flex'>
-              <Link href='/Login'>
-                <a className='px-5 py-2.5 text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 duration-200 rounded-md shadow'>
-                  Login
-                </a>
-              </Link>
+              {isLogin ? (
+                <Tooltip
+                  title={
+                    <div className='flex p-1.5 rounded-lg'>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        color='error'
+                        onClick={() => setIsLogin(!isLogin)}
+                      >
+                        Logout
+                      </Button>
+                    </div>
+                  }
+                  arrow
+                >
+                  <div className='flex items-center pt-0.5 cursor-pointer'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      strokeWidth={1.5}
+                      stroke='currentColor'
+                      className='w-5 sm:w-6 h-5 sm:h-6 mr-1'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        d='M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z'
+                      />
+                    </svg>
+                    <p className='text-xs sm:text-sm'>{namaMahasiswa}</p>
+                  </div>
+                </Tooltip>
+              ) : (
+                <Link href='/Login'>
+                  <a
+                    className='px-2 py-2.5 text-center text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 duration-200 rounded-md shadow'
+                    onClick={() => setIsLogin(!isLogin)}
+                  >
+                    Login
+                  </a>
+                </Link>
+              )}
             </div>
 
             <div className='block md:hidden'>

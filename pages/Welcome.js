@@ -29,7 +29,7 @@ const Home = () => {
           <h2 className='text-lg text-center md:text-xl font-bold py-3 mt-8'>
             Pengumuman KP
           </h2>
-          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
+          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
             <h2 className='mt-3 text-md md:text-lg font-bold'>
               Briefing ke 7-Pengumpulan Laporan Kemajuan
             </h2>
@@ -46,7 +46,7 @@ const Home = () => {
               </span>
             </p>
           </div>
-          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
+          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
             <h2 className='mt-3 text-md md:text-lg font-bold'>
               Briefing ke-6 Penyusunan Laporan Kemajuan
             </h2>
@@ -63,7 +63,7 @@ const Home = () => {
               </span>
             </p>
           </div>
-          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-xl border border-slate-400 rounded-md mx-2 my-3'>
+          <div className='block p-6 transition-shadow bg-white sm:pr-12 group shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
             <h2 className='mt-3 text-md md:text-lg font-bold'>
               Briefing Penyusunan Laporan Kemajuan
             </h2>
