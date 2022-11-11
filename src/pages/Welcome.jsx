@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Home = () => {
+const Welcome = () => {
   return (
     <>
       <div
@@ -86,4 +86,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Welcome;

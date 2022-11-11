@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import React from 'react';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Navigation from '@app/components/global/Navigation';
+import Footer from '@app/components/global/Footer';
 
 const Login = () => {
   return (
