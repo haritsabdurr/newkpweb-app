@@ -1,5 +1,5 @@
-import Footer from '../components/global/Footer';
-import Navigation from '../components/Navigation';
+import Footer from '@app/components/global/Footer';
+import Navigation from '@app/components/Navigation';
 
 const Alur = () => {
   return (
