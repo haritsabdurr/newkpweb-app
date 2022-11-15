@@ -1,15 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Logo from '@app/img/logo-fti.png';
-import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
 
 const Navigation = () => {
+  const router = useRouter();
+  const [token, setToken] = useState('');
+  const [user, setUser] = useState('');
+
   const [open, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [profile, setProfile] = useState(false);
+
+  const logoutHandler = () => {
+    location.reload();
+    Cookies.remove('token');
+    Cookies.remove('user');
+    setTimeout(() => {
+      setProfile(false);
+      router.push('/Welcome');
+    }, 1000);
+  };
+
+  useEffect(() => {
+    setToken(Cookies.get('token'));
+    setUser(Cookies.get('user'));
+  }, [logoutHandler]);
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 800px)');
@@ -19,8 +39,6 @@ const Navigation = () => {
 
     return () => window.removeEventListener('resize', listener);
   }, [isDesktop]);
-
-  const namaMahasiswa = 'Kristopher';
 
   const subMenuAnimate = {
     enter: {
@@ -106,21 +124,10 @@ const Navigation = () => {
 
           <div className='flex items-center gap-4'>
             <div className='sm:gap-4 sm:flex'>
-              {isLogin ? (
-                <Tooltip
-                  title={
-                    <div className='flex p-1.5 rounded-lg'>
-                      <Button
-                        variant='contained'
-                        size='small'
-                        color='error'
-                        onClick={() => setIsLogin(!isLogin)}
-                      >
-                        Logout
-                      </Button>
-                    </div>
-                  }
-                  arrow
+              {token ? (
+                <a
+                  className='flex justify-center items-center space-x-2 cursor-pointer'
+                  onClick={() => setProfile(!profile)}
                 >
                   <div className='flex items-center pt-0.5 cursor-pointer'>
                     <svg
@@ -129,7 +136,7 @@ const Navigation = () => {
                       viewBox='0 0 24 24'
                       strokeWidth={1.5}
                       stroke='currentColor'
-                      className='w-5 sm:w-6 h-5 sm:h-6 mr-1'
+                      className='w-5 sm:w-6 h-5 sm:h-6 mr-2 mt-0.5'
                     >
                       <path
                         strokeLinecap='round'
@@ -137,9 +144,21 @@ const Navigation = () => {
                         d='M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z'
                       />
                     </svg>
-                    <p className='text-xs sm:text-sm'>{namaMahasiswa}</p>
+                    <p className='text-xs sm:text-sm'>{user}</p>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      className='w-3 h-3 mt-0.5 ml-3 font-bold'
+                    >
+                      <path
+                        fillRule='evenodd'
+                        d='M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z'
+                        clipRule='evenodd'
+                      />
+                    </svg>
                   </div>
-                </Tooltip>
+                </a>
               ) : (
                 <Link href='/Login'>
                   <a
@@ -193,6 +212,40 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
+      <div
+        // className='block absolute right-6 mymd:right-[13rem] z-10 mt-1.5 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg'
+        className={`${
+          profile ? 'block' : 'hidden'
+        } absolute right-6 mymd:right-[21rem] z-10 mt-1.5 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg`}
+        role='menu'
+      >
+        <div className='flow-root py-2'>
+          <div className='-my-2 divide-y divide-gray-100'>
+            <div className='p-2'>
+              {/* <Link to={`/profile/${id}`} state={id}> */}
+              <a
+                href='#'
+                className='block rounded-lg px-4 py-1 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700'
+                role='menuitem'
+              >
+                Profile Settings
+              </a>
+              {/* </Link> */}
+            </div>
+
+            <div className='py-2 px-4'>
+              <a
+                className='text-white text-center bg-red-600 block px-3 py-2 rounded-md text-base font-medium cursor-pointer'
+                onClick={logoutHandler}
+              >
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <motion.div
         className={`${
           open ? 'block' : 'hidden'

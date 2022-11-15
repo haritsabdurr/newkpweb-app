@@ -1,17 +1,19 @@
-import Link from 'next/link';
 import Navigation from '@app/components/global/Navigation';
 import Footer from '@app/components/global/Footer';
-import axios from 'axios';
-import { useState } from 'react';
-import { baseUrl } from 'src/utils/url';
-import { useRouter } from 'next/router';
 import LoadingButton from '@app/components/loader/LoadingButton';
 import ErrorModal from '@app/components/modal/ErrorModal';
+import axios from 'axios';
+import Link from 'next/link';
+import Success from '@app/components/toast/Success';
+import { useState } from 'react';
+import { baseUrl } from '@app/utils/url';
+import { useRouter } from 'next/router';
 
 const Registrasi = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
 
   const [jurusan, setJurusan] = useState('Sistem Informasi');
   const [nama, setNama] = useState('');
@@ -19,22 +21,28 @@ const Registrasi = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errMessage, setErrMessage] = useState('');
+  const [scsMessage, setScsMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      await axios.post(`${baseUrl}/signup`, {
-        jurusan: jurusan,
-        nama: nama,
-        nim: nim,
-        email: email,
-        password: password,
-      });
+      await axios
+        .post(`${baseUrl}/signup`, {
+          jurusan: jurusan,
+          nama: nama,
+          nim: nim,
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          setScsMessage(res.data.message);
+        });
+      setIsRegister(true);
       setTimeout(() => {
         router.push('/Login');
-      }, 1000);
+      }, 2200);
     } catch (err) {
       setIsLoading(false);
       setError(true);
@@ -49,11 +57,7 @@ const Registrasi = () => {
       {error && (
         <ErrorModal errMessage={errMessage} close={() => setError(!error)} />
       )}
-      {/* {error ? (
-        
-      ) : (
-        ''
-      )} */}
+      <Success open={isRegister} message={scsMessage} />
       <div className='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8'>
         <div className='max-w-2xl mx-auto text-center'>
           <h1 className='text-2xl font-bold sm:text-3xl uppercase'>
@@ -178,6 +182,14 @@ const Registrasi = () => {
               </button>
             )}
           </div>
+          <p className='text-sm text-center text-gray-700 pt-4'>
+            Sudah Punya Akun?{' '}
+            <span>
+              <Link href='/Login'>
+                <a className='underline'>Login</a>
+              </Link>
+            </span>
+          </p>
         </form>
       </div>
 
