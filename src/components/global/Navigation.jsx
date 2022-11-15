@@ -123,7 +123,7 @@ const Navigation = () => {
           </div>
 
           <div className='flex items-center gap-4'>
-            <div className='sm:gap-4 sm:flex'>
+            {/* <div className='sm:gap-4 sm:flex'>
               {token ? (
                 <a
                   className='flex justify-center items-center space-x-2 cursor-pointer'
@@ -169,7 +169,7 @@ const Navigation = () => {
                   </a>
                 </Link>
               )}
-            </div>
+            </div> */}
 
             <div className='block md:hidden'>
               <button
@@ -255,7 +255,7 @@ const Navigation = () => {
         animate={open ? 'enter' : 'exit'}
         variants={subMenuAnimate}
       >
-        <div className='px-2 pt-2 pb-3 space-y-1'>
+        <div className='px-2 pt-2 pb-3 space-y-1 text-center'>
           <Link href='/Alur'>
             <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
               Alur & File KP
@@ -279,6 +279,39 @@ const Navigation = () => {
               Lowongan KP
             </a>
           </Link>
+
+          {token ? (
+            <div className='space-y-2'>
+              <a className='flex justify-center items-center space-x-1 py-1.5 border border-black/20 rounded-md'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='w-4 h-4 mt-0.5'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z'
+                    clipRule='evenodd'
+                  />
+                </svg>
+                <span>{user}</span>
+              </a>
+
+              <a
+                className='text-white bg-red-600 block px-3 py-2 rounded-md text-base font-medium'
+                onClick={logoutHandler}
+              >
+                Logout
+              </a>
+            </div>
+          ) : (
+            <Link href='/Login'>
+              <a className='text-white bg-purple-700 block px-3 py-2 rounded-md text-base font-medium'>
+                Login
+              </a>
+            </Link>
+          )}
         </div>
       </motion.div>
     </header>
