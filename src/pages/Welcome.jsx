@@ -1,9 +1,12 @@
+import Footer from '@app/components/global/Footer';
+import Navigation from '@app/components/global/Navigation';
 import Link from 'next/link';
 import React from 'react';
 
-const Home = () => {
+const Welcome = () => {
   return (
     <>
+      <Navigation />
       <div
         className='text-center md:pb-16 text-white px-6 py-32 xl:px-[20rem] h-[36rem]'
         id='banner-hero'
@@ -82,8 +85,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
 
-export default Home;
+export default Welcome;
