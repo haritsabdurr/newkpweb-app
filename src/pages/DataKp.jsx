@@ -30,7 +30,7 @@ const DataKp = () => {
               <textarea
                 id='message'
                 rows='3'
-                class='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
+                className='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
                 name='judulkp'
               ></textarea>
             </div>
@@ -45,7 +45,7 @@ const DataKp = () => {
               <textarea
                 id='message'
                 rows='2'
-                class='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
+                className='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
                 name='tempatkp'
               ></textarea>
             </div>
@@ -60,7 +60,7 @@ const DataKp = () => {
               <textarea
                 id='message'
                 rows='3'
-                class='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
+                className='block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
                 name='alamatkp'
               ></textarea>
             </div>
