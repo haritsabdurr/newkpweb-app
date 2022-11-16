@@ -9,6 +9,9 @@ module.exports = {
       screens: {
         mymd: '1282px',
       },
+      colors: {
+        'ungu-fti': '#AA52B2',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],
