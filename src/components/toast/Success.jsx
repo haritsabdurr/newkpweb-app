@@ -28,7 +28,7 @@ const Success = ({ open, message }) => {
       id='toast-success'
       className={`${
         open ? 'flex' : 'hidden'
-      } absolute top-24 right-20 sm:right-14 items-center p-4 mb-4 w-full max-w-[20rem] text-white bg-green-600 rounded-lg shadow`}
+      } absolute top-24 right-11 sm:right-14 items-center p-4 mb-4 w-full max-w-[20rem] text-white bg-green-600 rounded-lg shadow`}
       role='alert'
       initial='exit'
       animate={open ? 'enter' : ''}
