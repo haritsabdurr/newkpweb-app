@@ -17,13 +17,14 @@ const Navigation = () => {
   const [profile, setProfile] = useState(false);
 
   const logoutHandler = () => {
-    location.reload();
+    //
+    router.push('/Welcome');
     Cookies.remove('token');
     Cookies.remove('user');
     setTimeout(() => {
       setProfile(false);
-      router.push('/Welcome');
     }, 1000);
+    // location.reload();
   };
 
   useEffect(() => {
@@ -104,9 +105,9 @@ const Navigation = () => {
                 </li>
 
                 <li>
-                  <Link href='/Registrasi'>
+                  <Link href={`${token ? '/DataKp' : '/Registrasi'}`}>
                     <a className='py-2 text-slate-900 transition hover:text-gray-500/75 hover:border-b-2 hover:border-purple-700'>
-                      Registrasi
+                      {`${token ? 'Isi Data KP' : 'Registrasi'}`}
                     </a>
                   </Link>
                 </li>
@@ -123,10 +124,10 @@ const Navigation = () => {
           </div>
 
           <div className='flex items-center gap-4'>
-            {/* <div className='sm:gap-4 sm:flex'>
+            <div className='sm:gap-4 sm:flex'>
               {token ? (
                 <a
-                  className='flex justify-center items-center space-x-2 cursor-pointer'
+                  className='hidden sm:flex justify-center items-center space-x-2 cursor-pointer'
                   onClick={() => setProfile(!profile)}
                 >
                   <div className='flex items-center pt-0.5 cursor-pointer'>
@@ -162,14 +163,14 @@ const Navigation = () => {
               ) : (
                 <Link href='/Login'>
                   <a
-                    className='px-3 py-2.5 text-center text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 duration-200 rounded-md shadow'
+                    className='px-3 py-2.5 text-center text-sm font-medium text-white bg-purple-700 hover:bg-purple-800 duration-200 rounded-md shadow hidden sm:block'
                     onClick={() => setIsLogin(!isLogin)}
                   >
                     Login
                   </a>
                 </Link>
               )}
-            </div> */}
+            </div>
 
             <div className='block md:hidden'>
               <button
@@ -216,7 +217,7 @@ const Navigation = () => {
       <div
         // className='block absolute right-6 mymd:right-[13rem] z-10 mt-1.5 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg'
         className={`${
-          profile ? 'block' : 'hidden'
+          profile ? 'hidden sm:block' : 'hidden'
         } absolute right-6 mymd:right-[21rem] z-10 mt-1.5 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg`}
         role='menu'
       >
