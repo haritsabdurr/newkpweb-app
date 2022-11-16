@@ -23,7 +23,7 @@ const Alur = () => {
         </div>
 
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Menyerahkan Surat Keterangan KP pada perusahaan
@@ -51,7 +51,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Memilih mata kuliah KP
@@ -79,7 +79,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Mengajukan Form Permohonan Pembimbing
@@ -108,7 +108,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Melaksanakan KP di perusahaan
@@ -136,7 +136,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Memperoleh Surat Keterangan Selesai KP dari perusahaan
@@ -164,7 +164,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Mengumpulkan Laporan KP
@@ -192,7 +192,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Mengikuti sidang KP
@@ -222,7 +222,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Perbaikan laporan KP
@@ -250,7 +250,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Konsultasi format akhir KP dengan Koordinator KP
@@ -278,7 +278,7 @@ const Alur = () => {
           </div>
         </div>
         <div>
-          <a className='relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md mx-2 my-3'>
+          <a className='mx-auto relative block p-8 shadow-md hover:shadow-lg border border-slate-200 rounded-md my-3 w-[80%]'>
             <div className='mt-2 text-gray-500 sm:pr-8 text-center'>
               <h5 className='mt-2 text-xl font-bold text-gray-900'>
                 Mengumpulkan laporan akhir KP
