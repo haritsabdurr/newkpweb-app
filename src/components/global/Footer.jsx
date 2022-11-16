@@ -20,7 +20,7 @@ const Footer = () => {
       <div className='px-4 py-16 mx-auto sm:px-4 lg:px-8'>
         <div className='flex justify-center text-teal-300'>
           <Link href='http://fti.untar.ac.id/' target='_blank'>
-            <div className='cursor-pointer'>
+            <div className='cursor-pointer bg-white/50 px-6 py-2 rounded-md'>
               <Image
                 src={Logo}
                 alt='logo ibik'
