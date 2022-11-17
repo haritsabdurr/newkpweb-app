@@ -167,7 +167,7 @@ const DataKp = () => {
               <div>
                 <label
                   className='text-sm text-gray-800 ml-2 mb-2'
-                  for='file_input'
+                  htmlFor='file_input'
                 >
                   KHS Terakhir
                 </label>
@@ -181,7 +181,7 @@ const DataKp = () => {
               <div>
                 <label
                   className='text-sm text-gray-800 ml-2 mb-2'
-                  for='file_input'
+                  htmlFor='file_input'
                 >
                   Surat Keterangan KP
                 </label>
@@ -195,7 +195,7 @@ const DataKp = () => {
               <div>
                 <label
                   className='text-sm text-gray-800 ml-2 mb-2'
-                  for='file_input'
+                  htmlFor='file_input'
                 >
                   Sinopsis KP
                 </label>
@@ -209,7 +209,7 @@ const DataKp = () => {
               <div>
                 <label
                   className='text-sm text-gray-800 ml-2 mb-2'
-                  for='file_input'
+                  htmlFor='file_input'
                 >
                   Form Pembimbing
                 </label>
@@ -223,7 +223,7 @@ const DataKp = () => {
               <div>
                 <label
                   className='text-sm text-gray-800 ml-2 mb-2'
-                  for='file_input'
+                  htmlFor='file_input'
                 >
                   Lembar Penilaian
                 </label>
