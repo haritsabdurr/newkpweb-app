@@ -3,6 +3,7 @@ import Navigation from '@app/components/global/Navigation';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { useState, useEffect } from 'react';
+import Header from '@app/components/global/Header';
 
 const Welcome = () => {
   const [token, setToken] = useState('');
@@ -13,6 +14,7 @@ const Welcome = () => {
 
   return (
     <>
+      <Header />
       <Navigation />
       <div
         className='text-center md:pb-16 text-white px-6 py-32 xl:px-[20rem] h-[36rem]'

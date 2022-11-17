@@ -8,6 +8,7 @@ import Success from '@app/components/toast/Success';
 import { useState } from 'react';
 import { baseUrl } from '@app/utils/url';
 import { useRouter } from 'next/router';
+import Header from '@app/components/global/Header';
 
 const Registrasi = () => {
   const router = useRouter();
@@ -53,6 +54,7 @@ const Registrasi = () => {
 
   return (
     <div>
+      <Header />
       <Navigation />
       {error && (
         <ErrorModal errMessage={errMessage} close={() => setError(!error)} />

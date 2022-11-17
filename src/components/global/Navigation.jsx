@@ -269,9 +269,9 @@ const Navigation = () => {
             </a>
           </Link>
 
-          <Link href='/Registrasi'>
+          <Link href={`${token ? '/DataKp' : '/Registrasi'}`}>
             <a className='text-slate-900 hover:bg-purple-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-              Registrasi
+              {`${token ? 'Isi Data KP' : 'Registrasi'}`}
             </a>
           </Link>
 
