@@ -8,6 +8,7 @@ import JwtDecode from 'jwt-decode';
 import { useState } from 'react';
 import { baseUrl } from '@app/utils/url';
 import { useRouter } from 'next/router';
+import Header from '@app/components/global/Header';
 
 const Login = () => {
   const router = useRouter();
@@ -48,6 +49,7 @@ const Login = () => {
 
   return (
     <>
+      <Header />
       <Navigation />
       <div className='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8'>
         <div className='max-w-2xl mx-auto text-center'>

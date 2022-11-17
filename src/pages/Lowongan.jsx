@@ -1,9 +1,11 @@
 import Navigation from '@app/components/global/Navigation';
 import Footer from '@app/components/global/Footer';
+import Header from '@app/components/global/Header';
 
 const Lowongan = () => {
   return (
     <>
+      <Header />
       <Navigation />
       <div className='py-12 px-4 md:px-20'>
         <div className='max-w-2xl mx-auto text-center mb-8'>
