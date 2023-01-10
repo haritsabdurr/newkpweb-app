@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@app/img/logo-fti.png';
+import { useState, useEffect } from 'react';
 
 const Footer = () => {
   const [isDesktop, setIsDesktop] = useState(false);

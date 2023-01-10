@@ -2,8 +2,8 @@ import Footer from '@app/components/global/Footer';
 import Navigation from '@app/components/global/Navigation';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
-import { useState, useEffect } from 'react';
 import Header from '@app/components/global/Header';
+import { useState, useEffect } from 'react';
 
 const Welcome = () => {
   const [token, setToken] = useState('');
@@ -14,7 +14,7 @@ const Welcome = () => {
 
   return (
     <>
-      <Header />
+      <Header title={'Beranda'} />
       <Navigation />
       <div
         className='text-center md:pb-16 text-white px-6 py-32 xl:px-[20rem] h-[36rem]'

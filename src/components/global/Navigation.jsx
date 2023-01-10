@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
+import Logo from '@app/img/logo-fti.png';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import Logo from '@app/img/logo-fti.png';
 
 const Navigation = () => {
   const router = useRouter();

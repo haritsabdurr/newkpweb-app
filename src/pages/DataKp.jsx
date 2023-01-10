@@ -2,15 +2,60 @@ import Footer from '@app/components/global/Footer';
 import Header from '@app/components/global/Header';
 import Navigation from '@app/components/global/Navigation';
 import LoadingButton from '@app/components/loader/LoadingButton';
+import swal from 'sweetalert';
 import { useState } from 'react';
 
 const DataKp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isActive, setIsActive] = useState('DataKp');
 
+  const handleData = () => {
+    setIsLoading(true);
+    // setTimeout(() => {
+    swal({
+      title: 'Yay!',
+      text: 'Data submit successfully!',
+      icon: 'success',
+      timer: 8000,
+    });
+    // }, 3000);
+  };
+
+  const handleFile = () => {
+    setIsLoading(true);
+    swal({
+      title: 'Yay!',
+      text: 'File submit successfully!',
+      icon: 'success',
+      timer: 8000,
+    });
+  };
+
+  const fileChange = (e) => {
+    if (e.target.files.length < 1) {
+      return;
+    }
+    const file = e.target.files[0];
+    switch (file.type) {
+      case 'image/png':
+        alert('image type is png');
+        break;
+      case 'image/jpg':
+        alert('image/jpg');
+        break;
+      case 'image/jpeg':
+        alert('image is jpeg');
+        break;
+      default:
+        alert(
+          'image extension is not valid! \n Please Upload pdf or docx file'
+        );
+    }
+  };
+
   return (
     <>
-      <Header />
+      <Header title={'Data KP'} />
       <Navigation />
       <div className='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8'>
         <div className='max-w-2xl mx-auto text-center'>
@@ -19,35 +64,35 @@ const DataKp = () => {
           </h1>
           <p className='mt-4 text-gray-500'>Masukkan data dengan sesuai</p>
           <div className='flex justify-center px-2 sm:px-12 py-3 items-center mt-6 gap-12'>
-            <p
+            <buton
               onClick={() => setIsActive('DataKp')}
               className={`${
                 isActive === 'DataKp'
                   ? 'bg-purple-700 border border-purple-700 text-white'
                   : 'bg-white border border-purple-700 text-black'
-              } py-2 px-4 rounded-md`}
+              } py-2 px-4 rounded-md cursor-pointer`}
             >
               Data KP
-            </p>
-            <p
+            </buton>
+            <buton
               onClick={() => setIsActive('FileKp')}
               className={`${
                 isActive === 'FileKp'
                   ? 'bg-purple-700 border border-purple-700 text-white'
                   : 'bg-white border border-purple-700 text-black'
-              } py-2 px-4 rounded-md`}
+              } py-2 px-4 rounded-md cursor-pointer`}
             >
               Upload File KP
-            </p>
+            </buton>
           </div>
         </div>
 
-        <div>
+        <div className='my-4'>
           {isActive === 'DataKp' && (
             <form
               action=''
               className='max-w-md mx-auto mt-8 mb-0 space-y-4'
-              //   onSubmit={handleSubmit}
+              onSubmit={handleData}
             >
               <div>
                 <label
@@ -162,7 +207,7 @@ const DataKp = () => {
             <form
               action=''
               className='max-w-md mx-auto mt-8 mb-0 space-y-4'
-              //   onSubmit={handleSubmit}
+              onSubmit={handleFile}
             >
               <div>
                 <label
@@ -175,6 +220,7 @@ const DataKp = () => {
                   className='p-2 w-full text-sm text-gray-900 rounded-lg border border-gray-200'
                   id='file_input'
                   type='file'
+                  onChange={fileChange}
                 />
               </div>
 

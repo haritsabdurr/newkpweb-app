@@ -2,27 +2,25 @@ import Navigation from '@app/components/global/Navigation';
 import Footer from '@app/components/global/Footer';
 import LoadingButton from '@app/components/loader/LoadingButton';
 import ErrorModal from '@app/components/modal/ErrorModal';
+import Header from '@app/components/global/Header';
 import axios from 'axios';
 import Link from 'next/link';
 import Success from '@app/components/toast/Success';
+import swal from 'sweetalert';
 import { useState } from 'react';
 import { baseUrl } from '@app/utils/url';
 import { useRouter } from 'next/router';
-import Header from '@app/components/global/Header';
 
 const Registrasi = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [isRegister, setIsRegister] = useState(false);
 
   const [jurusan, setJurusan] = useState('Sistem Informasi');
   const [nama, setNama] = useState('');
   const [nim, setNim] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errMessage, setErrMessage] = useState('');
-  const [scsMessage, setScsMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,28 +36,30 @@ const Registrasi = () => {
           password: password,
         })
         .then((res) => {
-          setScsMessage(res.data.message);
+          swal({
+            title: 'Yay!',
+            text: res.data.message,
+            icon: 'success',
+          });
         });
-      setIsRegister(true);
       setTimeout(() => {
         router.push('/Login');
-      }, 2200);
+      }, 1200);
     } catch (err) {
       setIsLoading(false);
-      setError(true);
-      setErrMessage(err.response.data.message);
+      swal({
+        title: 'Oops!',
+        text: err.message,
+        icon: 'error',
+      });
       throw err;
     }
   };
 
   return (
     <div>
-      <Header />
+      <Header title={'Register'} />
       <Navigation />
-      {error && (
-        <ErrorModal errMessage={errMessage} close={() => setError(!error)} />
-      )}
-      <Success open={isRegister} message={scsMessage} />
       <div className='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8'>
         <div className='max-w-2xl mx-auto text-center'>
           <h1 className='text-2xl font-bold sm:text-3xl uppercase'>

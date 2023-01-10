@@ -6,7 +6,7 @@ import ArrowDown from '@app/components/other/ArrowDown';
 const Alur = () => {
   return (
     <>
-      <Header />
+      <Header title={'Alur KP'} />
       <Navigation />
       <div className='max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8'>
         <div className='max-w-2xl mx-auto text-center mb-12'>

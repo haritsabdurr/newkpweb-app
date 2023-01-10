@@ -5,7 +5,7 @@ import Header from '@app/components/global/Header';
 const Tempat = () => {
   return (
     <>
-      <Header />
+      <Header title={'Tempat KP'} />
       <Navigation />
       <div className='py-12 px-4 md:px-20'>
         <div className='max-w-2xl mx-auto text-center mb-8'>
